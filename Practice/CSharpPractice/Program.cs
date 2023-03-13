@@ -118,3 +118,34 @@ string helloWorld = "Hello World";
 Console.WriteLine("What is your first name?");
 string firstName = Console.ReadLine();
 Console.WriteLine($"{helloWorld}! My name is {firstName}!");
+
+
+/* --------------------------*/
+/* Floating-point data types */
+/* --------------------------*/
+
+Console.WriteLine("\n");
+Console.WriteLine("------------------------------------------------\n");
+
+
+Console.WriteLine("Examples of float, double and decimal data types: \n");
+
+//float - 4 bytes || 7 digits of precision
+
+float number1 = 3.14159f;
+
+//double - 8 bytes || 15-16 digits of precision
+
+double number2 = 3.14159D;
+
+//decimal - 16 bytes || 28-29 digits of precision
+
+decimal number3 = 3.14159m;
+
+
+Console.WriteLine("Examples - division - 1/3: \n");
+
+float flt = 1F / 3;
+double dbl = 1D / 3;
+decimal dcm = 1M / 3;
+Console.WriteLine("float: {0} double: {1} decimal: {2}", flt, dbl, dcm);
