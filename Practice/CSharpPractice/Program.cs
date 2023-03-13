@@ -1,5 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+
+Console.BackgroundColor = ConsoleColor.Black;
+Console.ForegroundColor = ConsoleColor.Green;
+Console.Clear();
+
+Console.WriteLine("----------------------------------------------------------- \n");
 Console.WriteLine("Integers of differing sizes and range: \n");
+Console.WriteLine("----------------------------------------------------------- \n");
 
 /* ---------
  * C# BASICS
@@ -92,8 +104,7 @@ Console.WriteLine($"ulong:   Byte usage: {ulongByteUsage} || Allows negatives: {
 
 
 Console.WriteLine("\n");
-Console.WriteLine("------------------------------------------------");
-Console.WriteLine("\n");
+Console.WriteLine("----------------------------------------------------------- \n");
 
 
 
@@ -104,20 +115,23 @@ Console.WriteLine("\n");
 // char
 
 Console.WriteLine("Examples of char data types: \n");
+Console.WriteLine("----------------------------------------------------------- \n");
 
 char aLetter = 'a';
 char star = '\u002A';
 
-Console.WriteLine($"{aLetter} and a {star}");
-Console.WriteLine("-----------------------");
+Console.WriteLine($"{aLetter} and a {star}\n" );
 
 // string
 
 Console.WriteLine("Examples of string data types: \n");
 string helloWorld = "Hello World";
-Console.WriteLine("What is your first name?");
+Console.WriteLine("What is your first name? \n");
 string firstName = Console.ReadLine();
-Console.WriteLine($"{helloWorld}! My name is {firstName}!");
+
+Console.WriteLine($"{helloWorld}! My name is {firstName.ToLower()}! \n");
+Console.WriteLine("Press enter to continue");
+Console.ReadLine();
 
 
 /* --------------------------*/
@@ -125,10 +139,9 @@ Console.WriteLine($"{helloWorld}! My name is {firstName}!");
 /* --------------------------*/
 
 Console.WriteLine("\n");
-Console.WriteLine("------------------------------------------------\n");
-
-
+Console.WriteLine("----------------------------------------------------------- \n");
 Console.WriteLine("Examples of float, double and decimal data types: \n");
+Console.WriteLine("----------------------------------------------------------- \n");
 
 //float - 4 bytes || 7 digits of precision
 
@@ -150,6 +163,9 @@ double dbl = 1D / 3;
 decimal dcm = 1M / 3;
 Console.WriteLine("float: {0} double: {1} decimal: {2}", flt, dbl, dcm);
 
+Console.WriteLine("Press enter to continue");
+Console.ReadLine();
+
 
 
 /* --------------------------*/
@@ -158,26 +174,28 @@ Console.WriteLine("float: {0} double: {1} decimal: {2}", flt, dbl, dcm);
 
 
 Console.WriteLine("\n");
-Console.WriteLine("------------------------------------------------\n");
-
+Console.WriteLine("----------------------------------------------------------- \n");
 Console.WriteLine("Examples of boolean data type \n");
+Console.WriteLine("----------------------------------------------------------- \n");
 
 
-Console.Write("Enter a number: ");
+Console.Write("Enter a number: \n");
 
 string numberString = Console.ReadLine();
 
 if (Int32.TryParse(numberString, out int number))
 {
-Console: Console.WriteLine($"{number}");
+    Console.WriteLine($"I converted your number: {number} to an integer \n");
 }
 else
 {
-    Console.WriteLine("Enter a valid number");
+    Console.WriteLine("Enter a valid number \n");
 }
 
+Console.WriteLine("Press enter to continue");
+Console.ReadLine();
 
-Console.WriteLine("Is C# fun?");
+Console.WriteLine("Is C# fun?\n");
 
 bool isCSharpFun = true;
 
@@ -191,3 +209,64 @@ else
 {
     Console.Write("No");
 }
+
+Console.WriteLine("Press enter to continue");
+Console.ReadLine();
+
+Console.WriteLine("----------------------------------------------------------- \n");
+Console.WriteLine("Array practice \n");
+Console.WriteLine("----------------------------------------------------------- \n");
+/* --------------------------*/
+/* Array practice */
+/* --------------------------*/
+
+//string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+
+
+//Console.WriteLine(cars[0]);
+
+
+////update index 0 in an array "cars"
+
+//cars[0] = "Opel";
+
+//Console.WriteLine(cars[0]);
+
+
+
+//set array, hardcode values
+
+string[] firstNames = new string[5];
+
+firstNames[0] = "Luka";
+firstNames[1] = "Marija";
+firstNames[2] = "Jona";
+firstNames[3] = "Mila";
+firstNames[4] = "Noa";
+
+Console.WriteLine($"Array firstNames contains following names {firstNames[0]}, {firstNames[1]}, {firstNames[2]}, {firstNames[3]}, {firstNames[4]}\n");
+
+
+//set array, split string into arrays using separator ","
+
+string testArraySplit = "luka,Marija,Jona,Mila,Noa";
+
+string[] firstNamesSplit = testArraySplit.Split(',');
+
+Console.WriteLine($"Last firstName in the array firstNamesSplit is {firstNamesSplit[4]}\n");
+Console.WriteLine("----------------------------------------------------------- \n");
+
+Console.WriteLine("Press enter to continue");
+Console.ReadLine();
+
+
+//Math
+Console.WriteLine("Enter the first number:");
+string firstNumber = Console.ReadLine();
+Console.WriteLine("Enter the second number:");
+string secondNumber = Console.ReadLine();
+
+Int32.TryParse(firstNumber, out int numberX);
+Int32.TryParse(secondNumber, out int numberY);
+
+Console.WriteLine($"Between number {firstNumber} and number { secondNumber } the number {(Math.Max(numberX, numberY))} is a bigger number");
