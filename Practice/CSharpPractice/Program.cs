@@ -94,3 +94,27 @@ Console.WriteLine($"ulong:   Byte usage: {ulongByteUsage} || Allows negatives: {
 Console.WriteLine("\n");
 Console.WriteLine("------------------------------------------------");
 Console.WriteLine("\n");
+
+
+
+/* -----------------------*/
+/* Characters and strings */
+/* -----------------------*/
+
+// char
+
+Console.WriteLine("Examples of char data types: \n");
+
+char aLetter = 'a';
+char star = '\u002A';
+
+Console.WriteLine($"{aLetter} and a {star}");
+Console.WriteLine("-----------------------");
+
+// string
+
+Console.WriteLine("Examples of string data types: \n");
+string helloWorld = "Hello World";
+Console.WriteLine("What is your first name?");
+string firstName = Console.ReadLine();
+Console.WriteLine($"{helloWorld}! My name is {firstName}!");
