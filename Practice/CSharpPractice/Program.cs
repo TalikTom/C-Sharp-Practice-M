@@ -149,3 +149,45 @@ float flt = 1F / 3;
 double dbl = 1D / 3;
 decimal dcm = 1M / 3;
 Console.WriteLine("float: {0} double: {1} decimal: {2}", flt, dbl, dcm);
+
+
+
+/* --------------------------*/
+/* Boolean data type */
+/* --------------------------*/
+
+
+Console.WriteLine("\n");
+Console.WriteLine("------------------------------------------------\n");
+
+Console.WriteLine("Examples of boolean data type \n");
+
+
+Console.Write("Enter a number: ");
+
+string numberString = Console.ReadLine();
+
+if (Int32.TryParse(numberString, out int number))
+{
+Console: Console.WriteLine($"{number}");
+}
+else
+{
+    Console.WriteLine("Enter a valid number");
+}
+
+
+Console.WriteLine("Is C# fun?");
+
+bool isCSharpFun = true;
+
+
+
+if (isCSharpFun)
+{
+    Console.Write("Yes, it\'s okay \n");
+}
+else
+{
+    Console.Write("No");
+}
