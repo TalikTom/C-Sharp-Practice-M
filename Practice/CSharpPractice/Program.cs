@@ -169,7 +169,7 @@ string numberString = Console.ReadLine();
 
 if (Int32.TryParse(numberString, out int number))
 {
-Console: Console.WriteLine($"{number}");
+    Console.WriteLine($"{number}");
 }
 else
 {
@@ -191,3 +191,20 @@ else
 {
     Console.Write("No");
 }
+
+
+/* --------------------------*/
+/* Array practice */
+/* --------------------------*/
+
+string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+
+
+Console.WriteLine(cars[0]);
+
+
+//update index 0 in an array "cars"
+
+cars[0] = "Opel";
+
+Console.WriteLine(cars[0]);
