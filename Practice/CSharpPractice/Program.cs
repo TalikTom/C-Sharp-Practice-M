@@ -1,5 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 Console.BackgroundColor = ConsoleColor.Black;
 Console.ForegroundColor = ConsoleColor.Green;
@@ -254,3 +258,15 @@ Console.WriteLine("----------------------------------------------------------- \
 
 Console.WriteLine("Press enter to continue");
 Console.ReadLine();
+
+
+//Math
+Console.WriteLine("Enter the first number:");
+string firstNumber = Console.ReadLine();
+Console.WriteLine("Enter the second number:");
+string secondNumber = Console.ReadLine();
+
+Int32.TryParse(firstNumber, out int numberX);
+Int32.TryParse(secondNumber, out int numberY);
+
+Console.WriteLine($"Between number {firstNumber} and number { secondNumber } the number {(Math.Max(numberX, numberY))} is a bigger number");
