@@ -106,48 +106,128 @@ Console.WriteLine("----------------------------------------------------------- \
 MainMenu();
 
 
-static void Hello()
+static void ForLoop()
 {
-
-    Console.WriteLine("Hello!");
-    Console.ReadLine();
-    Console.Clear();
-    MainMenu();
-}
-
-
-static void World()
-{
-
-    Console.WriteLine("World!");
-    Console.ReadLine();
-    Console.Clear();
-    MainMenu();
     
-}
 
-static void How()
-{
-
-    Console.WriteLine("How!");
+    Console.WriteLine("\n");
+    Console.WriteLine("Hello! This is an example of << For Loop >>:\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("for (int i = 0; i < 5; i++) \r\n{\r\n  Console.WriteLine(i);\r\n}\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("Press enter to continue and see what the code does!\n");
+    Console.ReadLine();
+    for (int i = 0; i < 5; i++)
+    {
+        Console.WriteLine(i);
+    }
+    Console.ReadLine();
+    Console.WriteLine("Statement was executed and it listed numbers from 0 to 4!\n");
+    Console.WriteLine("Press enter to go back to main menu\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
 }
 
-static void You()
-{
 
-    Console.WriteLine("You!");
+static void While()
+{
+    Console.WriteLine("\n");
+    Console.WriteLine("Hello! This is an example of << While Loop >>:\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("int i = 0;\r\nwhile (i < 5) \r\n{\r\n  Console.WriteLine(i);\r\n  i++;\r\n}");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("Press enter to continue and see what the code does!\n");
+    Console.ReadLine();
+    int i = 0;
+    while (i < 5)
+    {
+        Console.WriteLine(i);
+        i++;
+    }
+    Console.WriteLine("\n");
+    Console.WriteLine("Statement was executed and it listed numbers from 0 to 4!\n");
+    Console.WriteLine("Here is another example of a << While Loop >>!\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("while (true)\r\n    {\r\n        Console.WriteLine(\"You are stuck in an infinite loop until you enter STOP\");\r\n        string stop = Console.ReadLine();\r\n        if (stop == \"STOP\") break;\r\n        \r\n    }");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    while (true)
+    {
+        Console.WriteLine("You are stuck in an infinite loop until you enter STOP");
+        string stop = Console.ReadLine();
+        if (stop == "STOP") break;
+        
+    }
+    Console.WriteLine("Press enter to go back to main menu\n");
+    Console.ReadLine();
+    Console.Clear();
+    MainMenu();
+
+}
+
+static void DoWhile()
+{
+    Console.WriteLine("\n");
+    Console.WriteLine("Hello! This is an example of << Do While Loop >>:\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("int i = 0;\r\ndo \r\n{\r\n  Console.WriteLine(i);\r\n  i++;\r\n}\r\nwhile (i < 5);");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("Press enter to continue and see what the code does!\n");
+    Console.ReadLine();
+    int i = 0;
+    do
+    {
+        Console.WriteLine(i);
+        i++;
+    }
+    while (i < 5);
+    Console.WriteLine("\n");
+    Console.WriteLine("Statement was executed and it listed numbers from 0 to 4!\n");
+    Console.WriteLine("Press enter to see another example of Do While loop!\n");
+    Console.ReadLine();
+    Console.WriteLine("Here is another example of a << While Loop >>!\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("string stopIt;\r\n    do\r\n    {\r\n        Console.WriteLine(\"Welcome to infinity hell\");\r\n        stopIt = Console.ReadLine();\r\n    }\r\n    while (stopIt != \"STOP\");\r\n    {\r\n        \r\n        Console.WriteLine(\"You are stuck in an infinite loop until you enter STOP\");\r\n        string stop = Console.ReadLine();\r\n\r\n    }");
+    Console.WriteLine("----------------------------------------------------------- \n");
+   
+    string stopIt;
+    do
+    {
+        Console.WriteLine("Welcome to infinity hell, enter STOP to exit");
+        stopIt = Console.ReadLine();
+    }
+    while (stopIt != "STOP");
+    {
+        
+        Console.WriteLine("Phew... You were stuck in an infinite loop until you entered STOP");
+        
+
+    }
+
+    Console.WriteLine("Press enter to go back to main menu\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
 }
 
-static void Doin()
+static void ForEach()
 {
+    Console.WriteLine("\n");
+    Console.WriteLine("Hello! This is an example of << For Each Loop >>:\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("char[] myArray = {'H','e','l','l','o'};\r\n \r\n            foreach(char ch in myArray)\r\n            {\r\n                Console.WriteLine(ch);\r\n            }");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("Press enter to continue and see what the code does!\n");
+    Console.ReadLine();
+    char[] myArray = { 'H', 'e', 'l', 'l', 'o' };
 
-    Console.WriteLine("Doin!");
+    foreach (char ch in myArray)
+    {
+        Console.WriteLine(ch);
+    }
+    Console.ReadLine();
+    Console.WriteLine("Statement was executed and it looped through an array, spelling out all characters in it!\n");
+    Console.WriteLine("Press enter to go back to main menu\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
@@ -155,41 +235,46 @@ static void Doin()
 
 static void MainMenu()
 {
-    Console.Write("\nOptions :\n");
-    Console.Write("1-Hello\n2-World\n3-How\n4-You\n5-Doin'\n");
+    Console.Write("\nOptions" +
+        ":\n");
+    Console.Write("1: For loop\n2: While loop\n3: Do-While loop\n4: Foreach loop\n5: Exit\n");
 
     int input;
 
-    Console.Write("\nInput your choice :\n");
+    Console.Write("\nInput your choice: ");
     while (!int.TryParse(Console.ReadLine(), out input))
     {
-        Console.WriteLine("Invalid input! Please enter a valid number.");
+        Console.WriteLine("Invalid input! Please enter a valid number.\n");
     }
 
     switch (input)
     {
         case 1:
-            Hello();
+            ForLoop();
             break;
 
         case 2:
-            World();
+            While();
             break;
 
         case 3:
-            How();
+            DoWhile();
             break;
 
         case 4:
-            You();
+            ForEach();
             break;
 
         case 5:
-            Doin();
+            Console.WriteLine("----------------------------------------------------------- \n");
+            Console.Write("Goodbye\n");
+            
             break;
 
         default:
-            Console.Write("Input correct option\n");
+            Console.Clear();
+            Console.Write("Not, fair... Input correct option between 1 and 5\n");
+            MainMenu();
             break;
 
 
