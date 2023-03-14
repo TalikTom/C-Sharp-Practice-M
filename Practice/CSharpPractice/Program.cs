@@ -111,6 +111,7 @@ static void Hello()
 
     Console.WriteLine("Hello!");
     Console.ReadLine();
+    Console.Clear();
     MainMenu();
 }
 
@@ -130,6 +131,7 @@ static void How()
 
     Console.WriteLine("How!");
     Console.ReadLine();
+    Console.Clear();
     MainMenu();
 }
 
@@ -138,6 +140,7 @@ static void You()
 
     Console.WriteLine("You!");
     Console.ReadLine();
+    Console.Clear();
     MainMenu();
 }
 
@@ -146,6 +149,7 @@ static void Doin()
 
     Console.WriteLine("Doin!");
     Console.ReadLine();
+    Console.Clear();
     MainMenu();
 }
 
