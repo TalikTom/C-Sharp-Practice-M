@@ -181,9 +181,9 @@ Console.WriteLine("----------------------------------------------------------- \
 
 Console.Write("Enter a number: \n");
 
-string numberString = Console.ReadLine();
+string userInput = Console.ReadLine();
 
-if (Int32.TryParse(numberString, out int number))
+if (Int32.TryParse(userInput, out int number))
 {
     Console.WriteLine($"I converted your number: {number} to an integer \n");
 }
