@@ -130,15 +130,39 @@ static void ForLoop()
 }
 
 
-static void World()
+static void While()
 {
     Console.WriteLine("\n");
-    Console.WriteLine("World!\n");
-    Console.WriteLine("Press enter to continue\n");
+    Console.WriteLine("Hello! This is an example of << While Loop >>:\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("int i = 0;\r\nwhile (i < 5) \r\n{\r\n  Console.WriteLine(i);\r\n  i++;\r\n}");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("Press enter to continue and see what the code does!\n");
+    Console.ReadLine();
+    int i = 0;
+    while (i < 5)
+    {
+        Console.WriteLine(i);
+        i++;
+    }
+    Console.ReadLine();
+    Console.WriteLine("Statement was executed and it listed numbers from 0 to 4!\n");
+    Console.WriteLine("Here is another example of a << While Loop >>!\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("while (true)\r\n    {\r\n        Console.WriteLine(\"You are stuck in an infinite loop until you enter STOP\");\r\n        string stop = Console.ReadLine();\r\n        if (stop == \"STOP\") break;\r\n        \r\n    }");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    while (true)
+    {
+        Console.WriteLine("You are stuck in an infinite loop until you enter STOP");
+        string stop = Console.ReadLine();
+        if (stop == "STOP") break;
+        
+    }
+    Console.WriteLine("Press enter to go back to main menu\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
-    
+
 }
 
 static void How()
@@ -182,7 +206,7 @@ static void MainMenu()
             break;
 
         case 2:
-            World();
+            While();
             break;
 
         case 3:
