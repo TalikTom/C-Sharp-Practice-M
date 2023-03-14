@@ -272,7 +272,9 @@ static void MainMenu()
             break;
 
         default:
-            Console.Write("Input correct option\n");
+            Console.Clear();
+            Console.Write("Not, fair... Input correct option between 1 and 5\n");
+            MainMenu();
             break;
 
 
