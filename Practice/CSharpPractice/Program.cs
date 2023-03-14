@@ -4,6 +4,7 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+int
 
 Console.BackgroundColor = ConsoleColor.Black;
 Console.ForegroundColor = ConsoleColor.Green;
@@ -181,9 +182,9 @@ Console.WriteLine("----------------------------------------------------------- \
 
 Console.Write("Enter a number: \n");
 
-string numberString = Console.ReadLine();
+string userInput = Console.ReadLine();
 
-if (Int32.TryParse(numberString, out int number))
+if (Int32.TryParse(userInput, out int number))
 {
     Console.WriteLine($"I converted your number: {number} to an integer \n");
 }
