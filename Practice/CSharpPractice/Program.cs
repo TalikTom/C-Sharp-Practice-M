@@ -106,11 +106,24 @@ Console.WriteLine("----------------------------------------------------------- \
 MainMenu();
 
 
-static void Hello()
+static void ForLoop()
 {
+    
+
     Console.WriteLine("\n");
-    Console.WriteLine("Hello!\n");
-    Console.WriteLine("Press enter to continue\n");
+    Console.WriteLine("Hello! This is an example of << For Loop >>:\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("for (int i = 0; i < 5; i++) \r\n{\r\n  Console.WriteLine(i);\r\n}\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("Press enter to continue and see what the code does!\n");
+    Console.ReadLine();
+    for (int i = 0; i < 5; i++)
+    {
+        Console.WriteLine(i);
+    }
+    Console.ReadLine();
+    Console.WriteLine("Statement was executed and it listed numbers from 0 to 4!\n");
+    Console.WriteLine("Press enter to go back to main menu\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
@@ -165,7 +178,7 @@ static void MainMenu()
     switch (input)
     {
         case 1:
-            Hello();
+            ForLoop();
             break;
 
         case 2:
