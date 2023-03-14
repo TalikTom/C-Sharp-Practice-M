@@ -145,7 +145,7 @@ static void While()
         Console.WriteLine(i);
         i++;
     }
-    Console.ReadLine();
+    Console.WriteLine("\n");
     Console.WriteLine("Statement was executed and it listed numbers from 0 to 4!\n");
     Console.WriteLine("Here is another example of a << While Loop >>!\n");
     Console.WriteLine("----------------------------------------------------------- \n");
@@ -165,11 +165,46 @@ static void While()
 
 }
 
-static void How()
+static void DoWhile()
 {
     Console.WriteLine("\n");
-    Console.WriteLine("How!\n");
-    Console.WriteLine("Press enter to continue\n");
+    Console.WriteLine("Hello! This is an example of << Do While Loop >>:\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("int i = 0;\r\ndo \r\n{\r\n  Console.WriteLine(i);\r\n  i++;\r\n}\r\nwhile (i < 5);");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("Press enter to continue and see what the code does!\n");
+    Console.ReadLine();
+    int i = 0;
+    do
+    {
+        Console.WriteLine(i);
+        i++;
+    }
+    while (i < 5);
+    Console.WriteLine("\n");
+    Console.WriteLine("Statement was executed and it listed numbers from 0 to 4!\n");
+    Console.WriteLine("Press enter to see another example of Do While loop!\n");
+    Console.ReadLine();
+    Console.WriteLine("Here is another example of a << While Loop >>!\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("string stopIt;\r\n    do\r\n    {\r\n        Console.WriteLine(\"Welcome to infinity hell\");\r\n        stopIt = Console.ReadLine();\r\n    }\r\n    while (stopIt != \"STOP\");\r\n    {\r\n        \r\n        Console.WriteLine(\"You are stuck in an infinite loop until you enter STOP\");\r\n        string stop = Console.ReadLine();\r\n\r\n    }");
+    Console.WriteLine("----------------------------------------------------------- \n");
+   
+    string stopIt;
+    do
+    {
+        Console.WriteLine("Welcome to infinity hell, enter STOP to exit");
+        stopIt = Console.ReadLine();
+    }
+    while (stopIt != "STOP");
+    {
+        
+        Console.WriteLine("Phew... You were stuck in an infinite loop until you entered STOP");
+        
+
+    }
+
+    Console.WriteLine("Press enter to go back to main menu\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
@@ -210,7 +245,7 @@ static void MainMenu()
             break;
 
         case 3:
-            How();
+            DoWhile();
             break;
 
         case 4:
