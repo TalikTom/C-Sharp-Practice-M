@@ -108,8 +108,9 @@ MainMenu();
 
 static void Hello()
 {
-
-    Console.WriteLine("Hello!");
+    Console.WriteLine("\n");
+    Console.WriteLine("Hello!\n");
+    Console.WriteLine("Press enter to continue\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
@@ -118,8 +119,9 @@ static void Hello()
 
 static void World()
 {
-
-    Console.WriteLine("World!");
+    Console.WriteLine("\n");
+    Console.WriteLine("World!\n");
+    Console.WriteLine("Press enter to continue\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
@@ -128,8 +130,9 @@ static void World()
 
 static void How()
 {
-
-    Console.WriteLine("How!");
+    Console.WriteLine("\n");
+    Console.WriteLine("How!\n");
+    Console.WriteLine("Press enter to continue\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
@@ -137,17 +140,9 @@ static void How()
 
 static void You()
 {
-
-    Console.WriteLine("You!");
-    Console.ReadLine();
-    Console.Clear();
-    MainMenu();
-}
-
-static void Doin()
-{
-
-    Console.WriteLine("Doin!");
+    Console.WriteLine("\n");
+    Console.WriteLine("You!\n");
+    Console.WriteLine("Press enter to continue\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
@@ -155,15 +150,16 @@ static void Doin()
 
 static void MainMenu()
 {
-    Console.Write("\nOptions :\n");
-    Console.Write("1-Hello\n2-World\n3-How\n4-You\n5-Doin'\n");
+    Console.Write("\nOptions" +
+        ":\n");
+    Console.Write("1: For loop\n2: While loop\n3: Do-While loop\n4: Foreach loop\n5: Exit\n");
 
     int input;
 
-    Console.Write("\nInput your choice :\n");
+    Console.Write("\nInput your choice: ");
     while (!int.TryParse(Console.ReadLine(), out input))
     {
-        Console.WriteLine("Invalid input! Please enter a valid number.");
+        Console.WriteLine("Invalid input! Please enter a valid number.\n");
     }
 
     switch (input)
@@ -185,7 +181,9 @@ static void MainMenu()
             break;
 
         case 5:
-            Doin();
+            Console.WriteLine("----------------------------------------------------------- \n");
+            Console.Write("Goodbye\n");
+            
             break;
 
         default:
