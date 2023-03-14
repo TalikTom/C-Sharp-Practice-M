@@ -210,11 +210,24 @@ static void DoWhile()
     MainMenu();
 }
 
-static void You()
+static void ForEach()
 {
     Console.WriteLine("\n");
-    Console.WriteLine("You!\n");
-    Console.WriteLine("Press enter to continue\n");
+    Console.WriteLine("Hello! This is an example of << For Each Loop >>:\n");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("char[] myArray = {'H','e','l','l','o'};\r\n \r\n            foreach(char ch in myArray)\r\n            {\r\n                Console.WriteLine(ch);\r\n            }");
+    Console.WriteLine("----------------------------------------------------------- \n");
+    Console.WriteLine("Press enter to continue and see what the code does!\n");
+    Console.ReadLine();
+    char[] myArray = { 'H', 'e', 'l', 'l', 'o' };
+
+    foreach (char ch in myArray)
+    {
+        Console.WriteLine(ch);
+    }
+    Console.ReadLine();
+    Console.WriteLine("Statement was executed and it looped through an array, spelling out all characters in it!\n");
+    Console.WriteLine("Press enter to go back to main menu\n");
     Console.ReadLine();
     Console.Clear();
     MainMenu();
@@ -249,7 +262,7 @@ static void MainMenu()
             break;
 
         case 4:
-            You();
+            ForEach();
             break;
 
         case 5:
