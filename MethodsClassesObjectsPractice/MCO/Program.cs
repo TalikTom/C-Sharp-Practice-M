@@ -54,6 +54,39 @@ namespace MyApp // Note: actual namespace depends on the project name.
             sasha.StartDate = new DateTime(2020, 5,5);
 
 
+            /* ---------------------------------- */
+
+            /* Practicing lists */
+
+            /* ---------------------------------- */
+
+
+            Console.WriteLine("-----------------------");
+
+
+            List<Waiter> waiters = new List<Waiter>();
+
+
+            Waiter person = new Waiter();
+
+            person.FirstName = "Miroslav";
+            waiters.Add(person);
+
+            person = new Waiter();
+
+            person.FirstName = "Antimon";
+            waiters.Add(person);
+
+
+            foreach (Waiter w in waiters)
+            {
+                Console.WriteLine(w.FirstName);
+            }
+
+
+            Console.WriteLine("-----------------------");
+
+
 
 
             //    HelloWorld();
@@ -122,7 +155,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
         //{
 
 
-           
+
         //    Console.ReadLine();
         //    Console.Clear();
         //    MainMenu();
