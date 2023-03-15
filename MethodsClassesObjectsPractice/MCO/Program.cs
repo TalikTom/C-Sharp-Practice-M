@@ -8,8 +8,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            Console.Write("What is your first name?\n");
-            string firstName = Console.ReadLine();
+
+            string firstName = UserInput.GetAString("Enter your first name.");
 
             UserMessages.ApplicationStartMessage(firstName);
 
