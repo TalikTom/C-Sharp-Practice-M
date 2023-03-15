@@ -1,0 +1,15 @@
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\bin\Debug\net7.0\MCO.exe
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\bin\Debug\net7.0\MCO.deps.json
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\bin\Debug\net7.0\MCO.runtimeconfig.json
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\bin\Debug\net7.0\MCO.dll
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\bin\Debug\net7.0\MCO.pdb
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\MCO.csproj.AssemblyReference.cache
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\MCO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\MCO.AssemblyInfoInputs.cache
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\MCO.AssemblyInfo.cs
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\MCO.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\MCO.dll
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\refint\MCO.dll
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\MCO.pdb
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\MCO.genruntimeconfig.cache
+C:\Users\student\Documents\C-Sharp-Practice-M\MethodsClassesObjectsPractice\MCO\obj\Debug\net7.0\ref\MCO.dll
