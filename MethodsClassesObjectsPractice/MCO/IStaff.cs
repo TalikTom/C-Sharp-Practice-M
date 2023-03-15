@@ -14,5 +14,7 @@ namespace MCO
 
         string LastName { get; set; }
 
+        DateTime StartDate { get; set; }
+
     }
 }

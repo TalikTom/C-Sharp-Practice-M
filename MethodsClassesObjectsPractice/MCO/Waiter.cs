@@ -8,6 +8,6 @@ namespace MCO
 {
     internal class Waiter : Staff
     {
-        public int yearsOfExperience { get; set; }
+        public bool bartender { get; set; }
     }
 }
