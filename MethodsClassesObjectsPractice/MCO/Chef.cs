@@ -8,6 +8,6 @@ namespace MCO
 {
     public class Chef : Staff
     {
-        public bool certified { get; set; }
+        public bool Certified { get; set; }
     }
 }

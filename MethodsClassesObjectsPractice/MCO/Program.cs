@@ -24,13 +24,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
           
             igor.FirstName = "Igor";
             igor.LastName = "Igoric";
-            igor.bartender = true;
+            igor.Bartender = true;
             igor.StartDate = new DateTime(2022, 05, 09, 9, 0, 0);
 
 
             Console.WriteLine("Listing waiters info: \n");
             Console.WriteLine($"Waiters name: {igor.FirstName} {igor.LastName}");
-            Console.WriteLine($"{igor.FirstName} is {(igor.bartender ? "a bartender" : "not a bartender")}");
+            Console.WriteLine($"{igor.FirstName} is {(igor.Bartender ? "a bartender" : "not a bartender")}");
             Console.WriteLine($"{igor.FirstName} start date is {igor.StartDate}");
 
             Console.WriteLine("------------------\n");
@@ -40,11 +40,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             misko.FirstName = "Misko";
             misko.LastName = "Miskic";
-            misko.bartender = false;
+            misko.Bartender = false;
             misko.StartDate = new DateTime(2021, 01, 01, 9, 0, 0);
 
             Console.WriteLine($"Waiters name: {misko.FirstName} {misko.LastName}");
-            Console.WriteLine($"{misko.FirstName} is {(misko.bartender ? "a bartender" : "not a bartender")}");
+            Console.WriteLine($"{misko.FirstName} is {(misko.Bartender ? "a bartender" : "not a bartender")}");
             Console.WriteLine($"{misko.FirstName} start date is {misko.StartDate}");
 
 
@@ -52,7 +52,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             alemka.FirstName = "Alemka";
             alemka.LastName = "Alemkic";
-            alemka.certified = true;
+            alemka.Certified = true;
             alemka.StartDate = new DateTime(2021);
 
 
@@ -60,7 +60,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             sasha.FirstName = "Sasha";
             sasha.LastName = "Alemkic";
-            sasha.certified = true;
+            sasha.Certified = true;
             sasha.StartDate = new DateTime(2020, 5,5);
 
 
