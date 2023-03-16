@@ -121,11 +121,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Menu firstMenu = new Menu();
             firstMenu.StartDate = DateTime.Now;
             firstMenu.EndDate = firstMenu.EndDate = DateTime.Now.AddDays(365);
-            firstMenu.menuItems = new List<MenuItem>();
-            firstMenu.menuItems.Add(turkey);
-            firstMenu.menuItems.Add(chicken);
+            firstMenu.MenuItems = new List<MenuItem>();
+            firstMenu.MenuItems.Add(turkey);
+            firstMenu.menuItMenuItemsems.Add(chicken);
 
-            foreach (MenuItem item in firstMenu.menuItems)
+            foreach (MenuItem item in firstMenu.MenuItems)
             {
                 Console.WriteLine("Title: " + item.Title);
                 Console.WriteLine("Quantity: " + item.Quantity);

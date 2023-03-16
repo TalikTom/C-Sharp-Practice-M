@@ -12,6 +12,8 @@ namespace MCO
 
         public double Salary { get; set; }
 
+        public List<CustomerOrder> CustomerOrders { get; set; } 
+
         // By default set Bartender property to false, when instancing the object without parametres
         public Waiter ()
         {
