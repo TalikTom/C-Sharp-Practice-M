@@ -618,6 +618,19 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
+      },
+      "HelloWorldLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HelloWorldLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HelloWorldLibrary.dll": {}
+        }
       }
     }
   },
@@ -1519,10 +1532,16 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "HelloWorldLibrary/1.0.0": {
+      "type": "project",
+      "path": "../HelloWorldLibrary/HelloWorldLibrary.csproj",
+      "msbuildProject": "../HelloWorldLibrary/HelloWorldLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "HelloWorldLibrary >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Hosting >= 7.0.1"
     ]
@@ -1558,7 +1577,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\student\\Documents\\C-Sharp-Practice-M\\HelloWorldApp\\HelloWorldLibrary\\HelloWorldLibrary.csproj": {
+              "projectPath": "C:\\Users\\student\\Documents\\C-Sharp-Practice-M\\HelloWorldApp\\HelloWorldLibrary\\HelloWorldLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
