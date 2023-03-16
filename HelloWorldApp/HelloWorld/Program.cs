@@ -1,6 +1,7 @@
 ﻿using HelloWorldLibrary.BusinessLogic;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using HelloWorld;
 using System.Runtime.InteropServices;
 
 using IHost host = CreateHostBuilder(args).Build();
@@ -26,5 +27,6 @@ static IHostBuilder CreateHostBuilder(string[] args)
         .ConfigureServices((_, services) =>
         {
             services.AddSingleton<IMessages, Messages>();
+            services.AddSingleton<App>();
         });
 }
