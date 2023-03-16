@@ -133,6 +133,72 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
 
 
+            /* constructor */
+
+
+            Waiter luciano = new Waiter();
+
+
+            Console.WriteLine($"Luciano is {(luciano.Bartender ? "a bartender" : "not a bartender")}");
+
+
+            Waiter kreshimir = new Waiter(true, 3000.22);
+
+            Console.WriteLine($"Kresho is {(kreshimir.Bartender ? "a bartender" : "not a bartender")}. His salary is {kreshimir.Salary}kn");
+
+
+            // passing parameters by value
+
+            static void addOne(int i)
+            {
+                i = i + 1;
+                Console.WriteLine("i is : " + i);
+            }
+
+           
+            int test = 20;
+            addOne(test);
+            Console.WriteLine("test is : " + test);
+
+            /* i is : 21
+            test is : 20 */
+
+
+
+            // passing parameters by reference
+
+            static void addOneToRefParam(ref int i)
+            {
+                i = i + 1;
+                Console.WriteLine("i is : " + i);
+            }
+
+            test = 20;
+            addOneToRefParam(ref test);
+            Console.WriteLine("test is : " + test);
+
+            /* i is : 21
+            test is : 21 
+            "changes to the parameter change the variable whose 
+            reference you passed” */
+
+
+
+            // passing Parameter values as "out" references
+
+            static void readPerson(out string name, out int age)
+            {
+                name = readString("Enter your name : ");
+                age = readInt("Enter your age : ");
+            }
+           
+            string name;
+            int age;
+            readPerson(out name, out age);
+
+            Console.WriteLine($"{name} {age}");
+
+
 
 
             //    HelloWorld();
@@ -157,6 +223,20 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //        Console.Write(item);
             //    }
         }
+        private static string readString(string v)
+        {
+            v = Console.ReadLine();
+            return v;
+        }
+
+        private static int readInt(string input)
+        {
+            int myNum;
+            input = Console.ReadLine();
+            bool isString = int.TryParse(input, out myNum);
+            return myNum;
+        }
+
         //static void MainMenu()
         //{
         //    Console.Write("\nOptions" +
