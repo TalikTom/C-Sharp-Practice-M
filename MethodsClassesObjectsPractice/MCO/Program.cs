@@ -2,6 +2,7 @@
 using MCO;
 using System;
 using System.Net.NetworkInformation;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -189,7 +190,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             static void readPerson(out string name, out int age)
             {
                 name = readString("Enter your name : ");
-                age = readInt("Enter your age : ");
+                age = readInt("Enter your age : ", 0, 100);
             }
            
             string name;
@@ -198,6 +199,50 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             Console.WriteLine($"{name} {age}");
 
+
+            //Array practice
+
+
+            int score1, score2, score3, score4, score5, score6, score7, score8, score9, score10, score11;
+
+
+         
+            int [] scores = new int[11];
+
+            for (int i = 0; i < 11; i++)
+            {
+                scores[i] = readInt("Score: ", 0, 1000);
+            }
+
+
+
+            //Two-dimensional arrays
+
+            int[,] board = new int[3, 3];
+            board[1, 1] = 1;
+
+
+            //multiplication table 5x5
+
+            int[,] multiplicationTable = new int[6, 6];
+
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= 5; j++)
+                {
+                    multiplicationTable[i, j] = i * j;
+                }
+            }
+
+
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= 5; j++)
+                {
+                    Console.Write("{0,3} ", multiplicationTable[i, j]);
+                }
+                Console.WriteLine();
+            }
 
 
 
@@ -229,13 +274,18 @@ namespace MyApp // Note: actual namespace depends on the project name.
             return v;
         }
 
-        private static int readInt(string input)
+        static int readInt(string prompt, int low, int high)
         {
-            int myNum;
-            input = Console.ReadLine();
-            bool isString = int.TryParse(input, out myNum);
-            return myNum;
+            int result;
+            do
+            {
+                string intString = readString(prompt);
+                result = int.Parse(intString);
+            } while ((result < low) || (result > high));
+            return result;
         }
+
+        
 
         //static void MainMenu()
         //{
