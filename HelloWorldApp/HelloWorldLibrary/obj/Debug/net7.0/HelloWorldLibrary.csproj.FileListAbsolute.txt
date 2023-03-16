@@ -1,0 +1,13 @@
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\bin\Debug\net7.0\CustomText.json
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\bin\Debug\net7.0\HelloWorldLibrary.deps.json
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\bin\Debug\net7.0\HelloWorldLibrary.dll
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\bin\Debug\net7.0\HelloWorldLibrary.pdb
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.csproj.AssemblyReference.cache
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.AssemblyInfoInputs.cache
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.AssemblyInfo.cs
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.dll
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\obj\Debug\net7.0\refint\HelloWorldLibrary.dll
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.pdb
+C:\Users\student\Documents\C-Sharp-Practice-M\HelloWorldApp\HelloWorldLibrary\obj\Debug\net7.0\ref\HelloWorldLibrary.dll
