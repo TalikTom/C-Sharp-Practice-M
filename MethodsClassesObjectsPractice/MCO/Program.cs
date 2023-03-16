@@ -100,6 +100,52 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 
             Console.WriteLine("-----------------------");
+            Console.WriteLine("Menu and items on the menu:");
+            Console.WriteLine("-----------------------");
+
+
+           
+
+            MenuItem turkey = new MenuItem();
+            turkey.Title = "Turkey";
+            turkey.Quantity = 3;
+            turkey.Price = 30.20M;
+
+
+            MenuItem chicken = new MenuItem();
+            chicken.Title = "Chicken";
+            chicken.Quantity = 10;
+            chicken.Price = 20.20M;
+
+
+            Menu firstMenu = new Menu();
+            firstMenu.StartDate = DateTime.Now;
+            firstMenu.EndDate = firstMenu.EndDate = DateTime.Now.AddDays(365);
+            firstMenu.menuItems = new List<MenuItem>();
+            firstMenu.menuItems.Add(turkey);
+            firstMenu.menuItems.Add(chicken);
+
+            foreach (MenuItem item in firstMenu.menuItems)
+            {
+                Console.WriteLine("Title: " + item.Title);
+                Console.WriteLine("Quantity: " + item.Quantity);
+                Console.WriteLine("Price: " + item.Price);
+                Console.WriteLine();
+            }
+
+
+
+            //foreach (MenuItem m in firstMenu.menuItems)
+            //{
+            //    Console.WriteLine(m.Title);
+            //}
+
+
+
+
+
+
+            Console.WriteLine("-----------------------");
 
 
             Console.WriteLine("Enter New Chefs");
