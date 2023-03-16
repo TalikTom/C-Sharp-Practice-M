@@ -2,6 +2,7 @@
 using MCO;
 using System;
 using System.Net.NetworkInformation;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -99,6 +100,59 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 
             Console.WriteLine("-----------------------");
+            Console.WriteLine("Menu and items on the menu:");
+            Console.WriteLine("-----------------------");
+
+
+           
+
+            MenuItem turkey = new MenuItem();
+            turkey.Title = "Turkey";
+            turkey.Quantity = 3;
+            turkey.Price = 30.20M;
+
+
+            MenuItem chicken = new MenuItem();
+            chicken.Title = "Chicken";
+            chicken.Quantity = 10;
+            chicken.Price = 20.20M;
+
+
+            Menu firstMenu = new Menu();
+            firstMenu.StartDate = DateTime.Now;
+            firstMenu.EndDate = firstMenu.EndDate = DateTime.Now.AddDays(365);
+            firstMenu.menuItems = new List<MenuItem>();
+            firstMenu.menuItems.Add(turkey);
+            firstMenu.menuItems.Add(chicken);
+
+            foreach (MenuItem item in firstMenu.menuItems)
+            {
+                Console.WriteLine("Title: " + item.Title);
+                Console.WriteLine("Quantity: " + item.Quantity);
+                Console.WriteLine("Price: " + item.Price);
+                Console.WriteLine();
+            }
+
+            string cheapestItem = firstMenu.GetCheapestItem(firstMenu);
+
+
+            Console.WriteLine($"The cheapest item on the menu is: { cheapestItem }");
+
+
+
+
+
+            //foreach (MenuItem m in firstMenu.menuItems)
+            //{
+            //    Console.WriteLine(m.Title);
+            //}
+
+
+
+
+
+
+            Console.WriteLine("-----------------------");
 
 
             Console.WriteLine("Enter New Chefs");
@@ -133,6 +187,116 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
 
 
+            /* constructor */
+
+
+            Waiter luciano = new Waiter();
+
+
+            Console.WriteLine($"Luciano is {(luciano.Bartender ? "a bartender" : "not a bartender")}");
+
+
+            Waiter kreshimir = new Waiter(true, 3000.22);
+
+            Console.WriteLine($"Kresho is {(kreshimir.Bartender ? "a bartender" : "not a bartender")}. His salary is {kreshimir.Salary}kn");
+
+
+            // passing parameters by value
+
+            static void addOne(int i)
+            {
+                i = i + 1;
+                Console.WriteLine("i is : " + i);
+            }
+
+           
+            int test = 20;
+            addOne(test);
+            Console.WriteLine("test is : " + test);
+
+            /* i is : 21
+            test is : 20 */
+
+
+
+            // passing parameters by reference
+
+            static void addOneToRefParam(ref int i)
+            {
+                i = i + 1;
+                Console.WriteLine("i is : " + i);
+            }
+
+            test = 20;
+            addOneToRefParam(ref test);
+            Console.WriteLine("test is : " + test);
+
+            /* i is : 21
+            test is : 21 
+            "changes to the parameter change the variable whose 
+            reference you passed” */
+
+
+
+            // passing Parameter values as "out" references
+
+            static void readPerson(out string name, out int age)
+            {
+                name = readString("Enter your name : ");
+                age = readInt("Enter your age : ", 0, 100);
+            }
+           
+            string name;
+            int age;
+            readPerson(out name, out age);
+
+            Console.WriteLine($"{name} {age}");
+
+
+            //Array practice
+
+
+            int score1, score2, score3, score4, score5, score6, score7, score8, score9, score10, score11;
+
+
+         
+            int [] scores = new int[11];
+
+            for (int i = 0; i < 11; i++)
+            {
+                scores[i] = readInt("Score: ", 0, 1000);
+            }
+
+
+
+            //Two-dimensional arrays
+
+            int[,] board = new int[3, 3];
+            board[1, 1] = 1;
+
+
+            //multiplication table 5x5
+
+            int[,] multiplicationTable = new int[6, 6];
+
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= 5; j++)
+                {
+                    multiplicationTable[i, j] = i * j;
+                }
+            }
+
+
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= 5; j++)
+                {
+                    Console.Write("{0,3} ", multiplicationTable[i, j]);
+                }
+                Console.WriteLine();
+            }
+
 
 
             //    HelloWorld();
@@ -157,6 +321,25 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //        Console.Write(item);
             //    }
         }
+        private static string readString(string v)
+        {
+            v = Console.ReadLine();
+            return v;
+        }
+
+        static int readInt(string prompt, int low, int high)
+        {
+            int result;
+            do
+            {
+                string intString = readString(prompt);
+                result = int.Parse(intString);
+            } while ((result < low) || (result > high));
+            return result;
+        }
+
+        
+
         //static void MainMenu()
         //{
         //    Console.Write("\nOptions" +
