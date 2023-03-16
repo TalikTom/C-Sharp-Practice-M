@@ -133,6 +133,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine();
             }
 
+            string cheapestItem = firstMenu.GetCheapestItem(firstMenu);
+
+
+            Console.WriteLine($"The cheapest item on the menu is: { cheapestItem }");
+
+
+
 
 
             //foreach (MenuItem m in firstMenu.menuItems)
