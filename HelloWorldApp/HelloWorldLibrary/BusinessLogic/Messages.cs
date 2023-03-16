@@ -4,13 +4,19 @@ using System.Text.Json;
 
 namespace HelloWorldLibrary.BusinessLogic;
 
-public class Messages
+public class Messages : IMessages
 {
     private readonly ILogger<Messages> _log;
 
     public Messages(ILogger<Messages> log)
     {
         _log = log;
+    }
+
+    public string Greeting(string language)
+    {
+        string output = LookUpCustomText("Greeting", language);
+        return output;
     }
 
 
