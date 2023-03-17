@@ -12,30 +12,42 @@ namespace CRUFilesApp
     {
         static void Main(string[] args)
         {
-            //// Create a string array with the lines of text
-            //string[] lines = { "First line", "Second line", "Third line" };
+            // Create a string array with the lines of text
+            string[] lines = { "First line", "Second line", "Third line" };
 
-            //// Set a variable to the Documents path.
-            //string docPath = $"C:\\Users\\student\\Documents\\Luka";
-
-
-            //if (!Directory.Exists(docPath))
-            //    {
-            //    Directory.CreateDirectory(docPath);
-            //}
+            // Set a variable to the Documents path.
+            string docPath = $"C:\\Users\\student\\Documents\\Luka";
 
 
-            //string fileLocation = Path.Combine(docPath, "WriteLines.txt");
+            if (!Directory.Exists(docPath))
+            {
+                Directory.CreateDirectory(docPath);
+            }
+
+            string fileLocation = Path.Combine(docPath, "WriteLines2.txt");
 
 
-            //using (FileStream stream = new FileStream(fileLocation,FileMode.Open))
-            //{
-            //    StreamWriter writer = new StreamWriter(stream);
-            //    foreach (string line in lines)
-            //    writer.WriteLine(line);
-            //    writer.Close();
-            //    writer.Flush();
-            //}   
+            if (!File.Exists(fileLocation))
+            {
+                    FileStream stream = File.Create(fileLocation);
+
+                    stream.Flush();
+                    stream.Close();
+                
+            }
+                      
+
+
+            using (FileStream stream = new FileStream(fileLocation, FileMode.Open))
+            {
+                StreamWriter writer = new StreamWriter(stream);
+                foreach (string line in lines)
+                {
+                    writer.WriteLine(line);
+                }
+                writer.Close();
+              
+            }
 
 
             // FileStream write text
@@ -93,17 +105,17 @@ namespace CRUFilesApp
             //}
 
 
-            // FileStream CopyTo
+            //// FileStream CopyTo
 
-            string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt"; ;
-            using var fs = new FileStream(fileName1, FileMode.Open);
+            //string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt"; ;
+            //using var fs = new FileStream(fileName1, FileMode.Open);
 
-            string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
-            using var fs2 = new FileStream(fileName2, FileMode.OpenOrCreate);
+            //string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+            //using var fs2 = new FileStream(fileName2, FileMode.OpenOrCreate);
 
-            fs.CopyTo(fs2);
+            //fs.CopyTo(fs2);
 
-            Console.WriteLine("File copied");
+            //Console.WriteLine("File copied");
         }
     }
 }
