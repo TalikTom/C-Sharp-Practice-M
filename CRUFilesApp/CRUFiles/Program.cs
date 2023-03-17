@@ -17,36 +17,73 @@ namespace CRUFilesApp
     {
         static void Main(string[] args)
         {
+            /* ---------------------------------------------------- */
+
+            //System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            //Console.WriteLine("Generating PDF...");
+
+            //// Create a new PDF document
+            //var document = new PdfDocument();
+            //document.Info.Title = "Created with PDFsharp";
+
+            //// Create an empty page
+            //var page = document.AddPage();
+
+            //// Get an XGraphics object for drawing
+            //var gfx = XGraphics.FromPdfPage(page);
+
+            //// Create a font
+            //var font = new XFont("Arial", 20, XFontStyle.BoldItalic);
+
+            //// Draw the text
+            //gfx.DrawString("Hello, World!", font, XBrushes.Black,
+            //new XRect(0, 0, page.Width, page.Height),
+            //XStringFormats.Center);
+
+            //// Save the document...
+            //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.pdf";
+            //document.Save(fileName);
+            //Console.WriteLine("PDF Generated!");
+
+            //// ...and start a viewer.
+            ////Process.Start(filename);
+            ///
+
+            // Read the text file
+
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
+            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+
+            string pdfOutput = $"C:\\Users\\student\\Documents\\Luka\\pdfOutput.pdf";
+
+            string text = File.ReadAllText(fileName);
+
+
+            PdfDocument document = new PdfDocument();
+            PdfPage page = document.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+            XFont font = new XFont("Courier New", 12, XFontStyle.Regular);
+
+           
+            using (MemoryStream stream = new MemoryStream())
+            {
+                
+                using (StreamWriter writer = new StreamWriter(stream))
+                {
+                    writer.Write(text);
+                }
+
+                gfx.DrawString(text, font, XBrushes.Black, new XRect(50, 50, page.Width, page.Height), XStringFormats.TopLeft);
+            }
+
+       
+            document.Save(pdfOutput);
 
           
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            Console.WriteLine("Generating PDF...");
+            document.Close();
 
-            // Create a new PDF document
-            var document = new PdfDocument();
-            document.Info.Title = "Created with PDFsharp";
-
-            // Create an empty page
-            var page = document.AddPage();
-
-            // Get an XGraphics object for drawing
-            var gfx = XGraphics.FromPdfPage(page);
-
-            // Create a font
-            var font = new XFont("Arial", 20, XFontStyle.BoldItalic);
-
-            // Draw the text
-            gfx.DrawString("Hello, World!", font, XBrushes.Black,
-            new XRect(0, 0, page.Width, page.Height),
-            XStringFormats.Center);
-
-            // Save the document...
-            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.pdf";
-            document.Save(fileName);
-            Console.WriteLine("PDF Generated!");
-
-            // ...and start a viewer.
-            //Process.Start(filename);
+            /* --------------------------------------------------------------- */
 
             //// Create a string array with the lines of text
             //string[] lines = { "First line", "Second line", "Third line" };
