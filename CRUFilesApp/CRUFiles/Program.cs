@@ -23,33 +23,60 @@ namespace CRUFilesApp
             /* StreamWriter/StreamReader */
             /* ------------------------------------------------------------------ */
 
-            //string data;
-            //StreamReader reader = null;
-            //StreamWriter writer = null;
-            //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
-            //try
-            //{
-            //    reader = new StreamReader(fileName);
-            //    writer = new StreamWriter(fileName);
-            //    data = reader.ReadLine();
+            string data;
+            StreamReader reader = null;
+            StreamWriter writer = null;
+            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+            try
+            {
+                reader = new StreamReader(fileName);
+                
+                data = reader.ReadLine();
 
-            //    while(data != null)
-            //    {
-            //        Console.WriteLine(data);
-            //        data = reader.ReadLine();
-            //    }
-            //}
-            //catch (Exception e)
-            //{
+                //keep reading data until there is no more
+                while (data != null)
+                {
+                    Console.WriteLine(data);
+                    data = reader.ReadLine();
+                }
+                reader.Close();
+                writer = new StreamWriter(fileName);
+                writer.WriteLine(@"
+          _____                   _______                   _____                   _______         
+         /\    \                 /::\    \                 /\    \                 /::\    \        
+        /::\____\               /::::\    \               /::\____\               /::::\    \       
+       /::::|   |              /::::::\    \             /::::|   |              /::::::\    \      
+      /:::::|   |             /::::::::\    \           /:::::|   |             /::::::::\    \     
+     /::::::|   |            /:::/~~\:::\    \         /::::::|   |            /:::/~~\:::\    \    
+    /:::/|::|   |           /:::/    \:::\    \       /:::/|::|   |           /:::/    \:::\    \   
+   /:::/ |::|   |          /:::/    / \:::\    \     /:::/ |::|   |          /:::/    / \:::\    \  
+  /:::/  |::|___|______   /:::/____/   \:::\____\   /:::/  |::|   | _____   /:::/____/   \:::\____\ 
+ /:::/   |::::::::\    \ |:::|    |     |:::|    | /:::/   |::|   |/\    \ |:::|    |     |:::|    |
+/:::/    |:::::::::\____\|:::|____|     |:::|    |/:: /    |::|   /::\____\|:::|____|     |:::|    |
+\::/    / ~~~~~/:::/    / \:::\    \   /:::/    / \::/    /|::|  /:::/    / \:::\    \   /:::/    / 
+ \/____/      /:::/    /   \:::\    \ /:::/    /   \/____/ |::| /:::/    /   \:::\    \ /:::/    /  
+             /:::/    /     \:::\    /:::/    /            |::|/:::/    /     \:::\    /:::/    /   
+            /:::/    /       \:::\__/:::/    /             |::::::/    /       \:::\__/:::/    /    
+           /:::/    /         \::::::::/    /              |:::::/    /         \::::::::/    /     
+          /:::/    /           \::::::/    /               |::::/    /           \::::::/    /      
+         /:::/    /             \::::/    /                /:::/    /             \::::/    /       
+        /:::/    /               \::/____/                /:::/    /               \::/____/        
+        \::/    /                 ~~                      \::/    /                 ~~              
+         \/____/                                           \/____/                                  
+                                                                                                  
+");
+            }
+            catch (Exception e)
+            {
 
-            //    Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message);
 
-            //    throw;
-            //}
-            //finally
-            //{
-
-            //}
+            }
+            finally
+            {
+               
+                writer.Close();
+            }
 
 
 
