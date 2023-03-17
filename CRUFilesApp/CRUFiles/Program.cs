@@ -6,6 +6,7 @@
 //PDFsharp
 
 
+using CRUFiles;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System.Diagnostics;
@@ -51,37 +52,13 @@ namespace CRUFilesApp
 
             // Read the text file
 
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-
             string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
 
             string pdfOutput = $"C:\\Users\\student\\Documents\\Luka\\pdfOutput.pdf";
 
-            string text = File.ReadAllText(fileName);
+            TextToPdfConverter converter = new TextToPdfConverter();
+            converter.ConvertTextToPdf(fileName, pdfOutput);
 
-
-            PdfDocument document = new PdfDocument();
-            PdfPage page = document.AddPage();
-            XGraphics gfx = XGraphics.FromPdfPage(page);
-            XFont font = new XFont("Courier New", 12, XFontStyle.Regular);
-
-           
-            using (MemoryStream stream = new MemoryStream())
-            {
-                
-                using (StreamWriter writer = new StreamWriter(stream))
-                {
-                    writer.Write(text);
-                }
-
-                gfx.DrawString(text, font, XBrushes.Black, new XRect(50, 50, page.Width, page.Height), XStringFormats.TopLeft);
-            }
-
-       
-            document.Save(pdfOutput);
-
-          
-            document.Close();
 
             /* --------------------------------------------------------------- */
 
