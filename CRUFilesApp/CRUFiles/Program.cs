@@ -22,60 +22,35 @@ namespace CRUFilesApp
             /* ------------------------------------------------------------------ */
             /* StreamWriter/StreamReader */
             /* ------------------------------------------------------------------ */
-            string data;
-            try
-            {
-                StreamReader reader = new StreamReader("");
-                data = reader.ReadLine();
 
-                while(data!=null)
-                {
-                    Console.WriteLine(data);
-                    data = reader.ReadLine();
-                }
-            }
-            catch (Exception)
-            {
+            //string data;
+            //StreamReader reader = null;
+            //StreamWriter writer = null;
+            //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+            //try
+            //{
+            //    reader = new StreamReader(fileName);
+            //    writer = new StreamWriter(fileName);
+            //    data = reader.ReadLine();
 
-                throw;
-            }
-            StreamReader reader = new StreamReader("");
+            //    while(data != null)
+            //    {
+            //        Console.WriteLine(data);
+            //        data = reader.ReadLine();
+            //    }
+            //}
+            //catch (Exception e)
+            //{
 
-            /* ------------------------------------------------------------------ */
-            /* Hardcoded create PDF */
-            /* ------------------------------------------------------------------ */
+            //    Console.WriteLine(e.Message);
 
-            //System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            //Console.WriteLine("Generating PDF...");
+            //    throw;
+            //}
+            //finally
+            //{
 
-            //// Create a new PDF document
-            //var document = new PdfDocument();
-            //document.Info.Title = "Created with PDFsharp";
+            //}
 
-            //// Create an empty page
-            //var page = document.AddPage();
-
-            //// Get an XGraphics object for drawing
-            //var gfx = XGraphics.FromPdfPage(page);
-
-            //// Create a font
-            //var font = new XFont("Arial", 20, XFontStyle.BoldItalic);
-
-            //// Draw the text
-            //gfx.DrawString("Hello, World!", font, XBrushes.Black,
-            //new XRect(0, 0, page.Width, page.Height),
-            //XStringFormats.Center);
-
-            //// Save the document...
-            //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.pdf";
-            //document.Save(fileName);
-            //Console.WriteLine("PDF Generated!");
-
-            // ...and start a viewer.
-            //Process.Start(filename);
-
-
-            // Read the text file
 
 
             /* ------------------------------------------------------------------ */
@@ -90,130 +65,201 @@ namespace CRUFilesApp
             //converter.ConvertTextToPdf(fileName, pdfOutput);
 
 
+            //simpleCreatePDF();
 
 
-
-            /* ------------------------------------------------------------------ */
-            /* Create .txt file using FileStream and StreamWriter */
-            /* ------------------------------------------------------------------ */
-
-            //// Create a string array with the lines of text
-            //string[] lines = { "First line", "Second line", "Third line" };
-
-            //// Set a variable to the Documents path.
-            //string docPath = $"C:\\Users\\student\\Documents\\Luka";
+            //createTxtFSSW();
 
 
-            //if (!Directory.Exists(docPath))
-            //{
-            //    Directory.CreateDirectory(docPath);
-            //}
-
-            //string fileLocation = Path.Combine(docPath, "WriteLines2.txt");
+            //FileStreamWrite();
 
 
-            //if (!File.Exists(fileLocation))
-            //{
-            //        FileStream stream = File.Create(fileLocation);
-
-            //        stream.Flush();
-            //        stream.Close();
-
-            //}
+            //StreamWriterWrite();
 
 
-
-            //using (FileStream stream = new FileStream(fileLocation, FileMode.Open))
-            //{
-            //    StreamWriter writer = new StreamWriter(stream);
-            //    foreach (string line in lines)
-            //    {
-            //        writer.WriteLine(line);
-            //    }
-            //    writer.Close();
-
-            //}
+            //FileStreamRead();
 
 
-            /* ------------------------------------------------------------------ */
-            /* FileStream write text */
-            /* ------------------------------------------------------------------ */
-
-            //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
-
-            //using FileStream fs = File.OpenWrite(fileName);
-
-            //var data = "testing";
-            //byte[] bytes = Encoding.UTF8.GetBytes(data);
-
-            //fs.Write(bytes, 0, bytes.Length);
+            //StreamReaderText();
 
 
-            /* ------------------------------------------------------------------ */
-            /* StreamWriter write text */
-            /* ------------------------------------------------------------------ */
+            //FileStreamCopy();
+        }
 
-            //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+        /* ------------------------------------------------------------------ */
+        /* Hardcoded create PDF */
+        /* ------------------------------------------------------------------ */
 
-            //using FileStream fs = File.Create(fileName);
-            //using StreamWriter sr = new StreamWriter(fs);
+        static void simpleCreatePDF()
+        {
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            Console.WriteLine("Generating PDF...");
 
-            //sr.WriteLine("testing2");
+            // Create a new PDF document
+            var document = new PdfDocument();
+            document.Info.Title = "Created with PDFsharp";
 
-            //Console.WriteLine("done");
+            // Create an empty page
+            var page = document.AddPage();
 
+            // Get an XGraphics object for drawing
+            var gfx = XGraphics.FromPdfPage(page);
 
-            /* ------------------------------------------------------------------ */
-            /* Filestream read text */
-            /* ------------------------------------------------------------------ */
+            // Create a font
+            var font = new XFont("Arial", 20, XFontStyle.BoldItalic);
 
-            //string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
+            // Draw the text
+            gfx.DrawString("Hello, World!", font, XBrushes.Black,
+            new XRect(0, 0, page.Width, page.Height),
+            XStringFormats.Center);
 
-            //using FileStream fs1 = File.OpenRead(fileName1);
-
-            //// The buf is a byte array into which we read the data from the file.
-            //byte[] buf = new byte[1024];
-            //int c;
-
-            //while ((c = fs1.Read(buf, 0, buf.Length)) > 0)
-            //{
-            //    Console.WriteLine(Encoding.UTF8.GetString(buf, 0, c));
-            //}
-
-
-            /* ------------------------------------------------------------------ */
-            /* StreamReader read text */
-            /* ------------------------------------------------------------------ */
-
-            //string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
-
-            //using FileStream fs2 = File.OpenRead(fileName2);
-            //using var sr = new StreamReader(fs2);
-
-            //string line;
-
-            //while ((line = sr.ReadLine()) != null)
-            //{
-            //    Console.WriteLine(line);
-            //}
-
-
-            /* ------------------------------------------------------------------ */
-            /* Filestream copy from one file to another */
-            /* ------------------------------------------------------------------ */
-
-            //string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt"; ;
-            //using var fs = new FileStream(fileName1, FileMode.Open);
-
-            //string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
-            //using var fs2 = new FileStream(fileName2, FileMode.OpenOrCreate);
-
-            //fs.CopyTo(fs2);
-
-            //Console.WriteLine("File copied");
+            // Save the document...
+            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.pdf";
+            document.Save(fileName);
+            Console.WriteLine("PDF Generated!");
         }
 
 
+        /* ------------------------------------------------------------------ */
+        /* Create .txt file using FileStream and StreamWriter */
+        /* ------------------------------------------------------------------ */
+
+        static void createTxtFSSW()
+        {
+            // Create a string array with the lines of text
+            string[] lines = { "First line", "Second line", "Third line" };
+
+            // Set a variable to the Documents path.
+            string docPath = $"C:\\Users\\student\\Documents\\Luka";
+
+
+            if (!Directory.Exists(docPath))
+            {
+                Directory.CreateDirectory(docPath);
+            }
+
+            string fileLocation = Path.Combine(docPath, "WriteLines3.txt");
+
+
+            if (!File.Exists(fileLocation))
+            {
+                FileStream stream = File.Create(fileLocation);
+
+                stream.Flush();
+                stream.Close();
+
+            }
+
+
+
+            using (FileStream stream = new FileStream(fileLocation, FileMode.Open))
+            {
+                StreamWriter writer = new StreamWriter(stream);
+                foreach (string line in lines)
+                {
+                    writer.WriteLine(line);
+                }
+                writer.Close();
+
+            }
+        }
+
+
+        /* ------------------------------------------------------------------ */
+        /* Filestream copy from one file to another */
+        /* ------------------------------------------------------------------ */
+
+        static void FileStreamCopy()
+        {
+            string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt"; ;
+            using var fs = new FileStream(fileName1, FileMode.Open);
+
+            string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+            using var fs2 = new FileStream(fileName2, FileMode.OpenOrCreate);
+
+            fs.CopyTo(fs2);
+
+            Console.WriteLine("File copied");
+        }
+
+
+        /* ------------------------------------------------------------------ */
+        /* StreamReader read text */
+        /* ------------------------------------------------------------------ */
+
+
+        static void StreamReaderText()
+        {
+            string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+
+            using FileStream fs2 = File.OpenRead(fileName2);
+            using var sr = new StreamReader(fs2);
+
+            string line;
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
+        }
+
+
+        /* ------------------------------------------------------------------ */
+        /* Filestream read text */
+        /* ------------------------------------------------------------------ */
+
+        static void FileStreamRead()
+        {
+            string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
+
+            using FileStream fs1 = File.OpenRead(fileName1);
+
+            // The buf is a byte array into which we read the data from the file.
+            byte[] buf = new byte[1024];
+            int c;
+
+            while ((c = fs1.Read(buf, 0, buf.Length)) > 0)
+            {
+                Console.WriteLine(Encoding.UTF8.GetString(buf, 0, c));
+            }
+        }
+
+
+        /* ------------------------------------------------------------------ */
+        /* StreamWriter write text */
+        /* ------------------------------------------------------------------ */
+
+
+        static void StreamWriterWrite()
+        {
+            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+
+            using FileStream fs = File.Create(fileName);
+            using StreamWriter sr = new StreamWriter(fs);
+
+            sr.WriteLine("testing2000");
+
+            Console.WriteLine("done");
+        }
+
+
+        /* ------------------------------------------------------------------ */
+        /* FileStream write text */
+        /* ------------------------------------------------------------------ */
+
+
+        static void FileStreamWrite()
+        {
+            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
+
+            using FileStream fs = File.OpenWrite(fileName);
+
+            var data = "testooooing";
+            byte[] bytes = Encoding.UTF8.GetBytes(data);
+
+            fs.Write(bytes, 0, bytes.Length);
+
+        }
 
     }
 }
