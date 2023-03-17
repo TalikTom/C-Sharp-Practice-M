@@ -16,7 +16,27 @@ string moreGuestsComing = "";
 do
 {
     GuestModel guest = new GuestModel();
+
     Console.Write("What is your first name: ");
-} while (moreGuestsComing.ToLower() ! = "yes");
+
+    guest.FirstName = Console.ReadLine();
+
+    Console.Write("What is your last name: ");
+
+    guest.LastName = Console.ReadLine();
+
+    Console.WriteLine("What message would you like to tell your host: ");
+    guest.MessageToHost = Console.ReadLine();
+
+    Console.Write("Are more guests coming (yes/no)?");
+    moreGuestsComing = Console.ReadLine();
+
+    guests.Add(guest);
+
+    Console.Clear();
+
+} while (moreGuestsComing.ToLower() == "yes");
+
+
 
 Console.ReadLine();
