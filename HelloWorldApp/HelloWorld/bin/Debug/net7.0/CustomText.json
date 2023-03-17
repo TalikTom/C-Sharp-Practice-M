@@ -1,0 +1,15 @@
+[
+  {
+    "langugage": "en",
+    "translations": {
+      "Greeting": "Hello World"
+    }
+  },
+  {
+    "langugage": "shk",
+    "translations": {
+      "Greeting": "Zdravo svitu"
+    }
+  }
+
+]
