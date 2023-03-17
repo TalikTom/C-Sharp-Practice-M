@@ -2,8 +2,13 @@
 //read txt file
 //update txt file
 //copy one file to another
+/* --------------------------*/
+//PDFsharp
 
 
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using System.Diagnostics;
 using System.Text;
 
 namespace CRUFilesApp
@@ -12,42 +17,73 @@ namespace CRUFilesApp
     {
         static void Main(string[] args)
         {
-            // Create a string array with the lines of text
-            string[] lines = { "First line", "Second line", "Third line" };
 
-            // Set a variable to the Documents path.
-            string docPath = $"C:\\Users\\student\\Documents\\Luka";
+          
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            Console.WriteLine("Generating PDF...");
+
+            // Create a new PDF document
+            var document = new PdfDocument();
+            document.Info.Title = "Created with PDFsharp";
+
+            // Create an empty page
+            var page = document.AddPage();
+
+            // Get an XGraphics object for drawing
+            var gfx = XGraphics.FromPdfPage(page);
+
+            // Create a font
+            var font = new XFont("Arial", 20, XFontStyle.BoldItalic);
+
+            // Draw the text
+            gfx.DrawString("Hello, World!", font, XBrushes.Black,
+            new XRect(0, 0, page.Width, page.Height),
+            XStringFormats.Center);
+
+            // Save the document...
+            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.pdf";
+            document.Save(fileName);
+            Console.WriteLine("PDF Generated!");
+
+            // ...and start a viewer.
+            //Process.Start(filename);
+
+            //// Create a string array with the lines of text
+            //string[] lines = { "First line", "Second line", "Third line" };
+
+            //// Set a variable to the Documents path.
+            //string docPath = $"C:\\Users\\student\\Documents\\Luka";
 
 
-            if (!Directory.Exists(docPath))
-            {
-                Directory.CreateDirectory(docPath);
-            }
+            //if (!Directory.Exists(docPath))
+            //{
+            //    Directory.CreateDirectory(docPath);
+            //}
 
-            string fileLocation = Path.Combine(docPath, "WriteLines2.txt");
-
-
-            if (!File.Exists(fileLocation))
-            {
-                    FileStream stream = File.Create(fileLocation);
-
-                    stream.Flush();
-                    stream.Close();
-                
-            }
-                      
+            //string fileLocation = Path.Combine(docPath, "WriteLines2.txt");
 
 
-            using (FileStream stream = new FileStream(fileLocation, FileMode.Open))
-            {
-                StreamWriter writer = new StreamWriter(stream);
-                foreach (string line in lines)
-                {
-                    writer.WriteLine(line);
-                }
-                writer.Close();
-              
-            }
+            //if (!File.Exists(fileLocation))
+            //{
+            //        FileStream stream = File.Create(fileLocation);
+
+            //        stream.Flush();
+            //        stream.Close();
+
+            //}
+
+
+
+            //using (FileStream stream = new FileStream(fileLocation, FileMode.Open))
+            //{
+            //    StreamWriter writer = new StreamWriter(stream);
+            //    foreach (string line in lines)
+            //    {
+            //        writer.WriteLine(line);
+            //    }
+            //    writer.Close();
+
+            //}
 
 
             // FileStream write text
@@ -117,5 +153,8 @@ namespace CRUFilesApp
 
             //Console.WriteLine("File copied");
         }
+
+
+
     }
 }
