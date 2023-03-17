@@ -38,16 +38,28 @@ namespace CRUFilesApp
             //}   
 
 
-            //C# FileStream write text
+            // FileStream write text
 
-            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
+            //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
 
-            using FileStream fs = File.OpenWrite(fileName);
+            //using FileStream fs = File.OpenWrite(fileName);
 
-            var data = "testing";
-            byte[] bytes = Encoding.UTF8.GetBytes(data);
+            //var data = "testing";
+            //byte[] bytes = Encoding.UTF8.GetBytes(data);
 
-            fs.Write(bytes, 0, bytes.Length);
+            //fs.Write(bytes, 0, bytes.Length);
+
+
+            // C# FileStream write text with StreamWriter
+
+            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+
+            using FileStream fs = File.Create(fileName);
+            using StreamWriter sr = new StreamWriter(fs);
+
+            sr.WriteLine("testing2");
+
+            Console.WriteLine("done");
 
         }
     }
