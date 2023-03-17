@@ -37,6 +37,9 @@ do
 
 } while (moreGuestsComing.ToLower() == "yes");
 
-
+foreach (GuestModel guest in guests)
+{
+    Console.Write(guest.GuestInfo);
+}
 
 Console.ReadLine();

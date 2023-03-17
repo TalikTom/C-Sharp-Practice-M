@@ -12,5 +12,13 @@ namespace GuestBookLibrary.Model
         public string LastName { get; set; }
         public string MessageToHost { get; set; }
 
+        public string GuestInfo
+        {
+            get
+            {
+                return $" {FirstName} {LastName}: {MessageToHost}";
+            }
+        }
+
     }
 }
