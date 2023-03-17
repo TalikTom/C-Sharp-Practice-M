@@ -50,17 +50,47 @@ namespace CRUFilesApp
             //fs.Write(bytes, 0, bytes.Length);
 
 
-            // C# FileStream write text with StreamWriter
+            // FileStream write text with StreamWriter
 
-            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+            //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
 
-            using FileStream fs = File.Create(fileName);
-            using StreamWriter sr = new StreamWriter(fs);
+            //using FileStream fs = File.Create(fileName);
+            //using StreamWriter sr = new StreamWriter(fs);
 
-            sr.WriteLine("testing2");
+            //sr.WriteLine("testing2");
 
-            Console.WriteLine("done");
+            //Console.WriteLine("done");
 
+
+            // FileStream read text
+
+            string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
+
+            using FileStream fs1 = File.OpenRead(fileName1);
+
+            // The buf is a byte array into which we read the data from the file.
+            byte[] buf = new byte[1024];
+            int c;
+
+            while ((c = fs1.Read(buf, 0, buf.Length)) > 0)
+            {
+                Console.WriteLine(Encoding.UTF8.GetString(buf, 0, c));
+            }
+
+
+            // FileStream read text with StreamReader
+
+            string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+
+            using FileStream fs2 = File.OpenRead(fileName2);
+            using var sr = new StreamReader(fs2);
+
+            string line;
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }
