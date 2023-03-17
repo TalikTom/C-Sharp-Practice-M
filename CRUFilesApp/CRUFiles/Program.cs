@@ -62,35 +62,48 @@ namespace CRUFilesApp
             //Console.WriteLine("done");
 
 
-            // FileStream read text
+            //// FileStream read text
 
-            string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
+            //string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
 
-            using FileStream fs1 = File.OpenRead(fileName1);
+            //using FileStream fs1 = File.OpenRead(fileName1);
 
-            // The buf is a byte array into which we read the data from the file.
-            byte[] buf = new byte[1024];
-            int c;
+            //// The buf is a byte array into which we read the data from the file.
+            //byte[] buf = new byte[1024];
+            //int c;
 
-            while ((c = fs1.Read(buf, 0, buf.Length)) > 0)
-            {
-                Console.WriteLine(Encoding.UTF8.GetString(buf, 0, c));
-            }
+            //while ((c = fs1.Read(buf, 0, buf.Length)) > 0)
+            //{
+            //    Console.WriteLine(Encoding.UTF8.GetString(buf, 0, c));
+            //}
 
 
-            // FileStream read text with StreamReader
+            //// FileStream read text with StreamReader
+
+            //string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+
+            //using FileStream fs2 = File.OpenRead(fileName2);
+            //using var sr = new StreamReader(fs2);
+
+            //string line;
+
+            //while ((line = sr.ReadLine()) != null)
+            //{
+            //    Console.WriteLine(line);
+            //}
+
+
+            // FileStream CopyTo
+
+            string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt"; ;
+            using var fs = new FileStream(fileName1, FileMode.Open);
 
             string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+            using var fs2 = new FileStream(fileName2, FileMode.OpenOrCreate);
 
-            using FileStream fs2 = File.OpenRead(fileName2);
-            using var sr = new StreamReader(fs2);
+            fs.CopyTo(fs2);
 
-            string line;
-
-            while ((line = sr.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-            }
+            Console.WriteLine("File copied");
         }
     }
 }
