@@ -1,45 +1,67 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using GuestBookLibrary.Model;
-
+﻿using GuestBookLibrary.Model;
 
 // Capture the information about each guest (assumption is at least one guest and unknow maximum)
 // Info to capture: first name, last name, message to the host
 // Once done, loop through each guest and print their info
 
-
-
-List<GuestModel> guests = new List<GuestModel>();
-
-string moreGuestsComing = "";
-
-do
+namespace GuestBook // Note: actual namespace depends on the project name.
 {
-    GuestModel guest = new GuestModel();
+    internal class Program
+    {
 
-    Console.Write("What is your first name: ");
+        private static List<GuestModel> guests = new List<GuestModel>();
+        static void Main(string[] args)
+        {
+            
+            GetGuestInformation();
 
-    guest.FirstName = Console.ReadLine();
+            PrintGuestInformation();
 
-    Console.Write("What is your last name: ");
+            Console.ReadLine();
+        }
 
-    guest.LastName = Console.ReadLine();
 
-    Console.WriteLine("What message would you like to tell your host: ");
-    guest.MessageToHost = Console.ReadLine();
+        private static void PrintGuestInformation()
+        {
 
-    Console.Write("Are more guests coming (yes/no)?");
-    moreGuestsComing = Console.ReadLine();
+            //loop through the list of guests
+            foreach (GuestModel guest in guests)
+            {
+                Console.Write(guest.GuestInfo);
+            }
+        }
 
-    guests.Add(guest);
+        private static void GetGuestInformation()
+        {
+            string moreGuestsComing = "";
 
-    Console.Clear();
+            do
+            {
+                GuestModel guest = new GuestModel();
 
-} while (moreGuestsComing.ToLower() == "yes");
+                Console.Write("What is your first name: ");
 
-foreach (GuestModel guest in guests)
-{
-    Console.Write(guest.GuestInfo);
+                guest.FirstName = Console.ReadLine();
+
+                Console.Write("What is your last name: ");
+
+                guest.LastName = Console.ReadLine();
+
+                Console.WriteLine("What message would you like to tell your host: ");
+                guest.MessageToHost = Console.ReadLine();
+
+                Console.Write("Are more guests coming (yes/no)?");
+                moreGuestsComing = Console.ReadLine();
+
+                guests.Add(guest);
+
+                Console.Clear();
+
+            } while (moreGuestsComing.ToLower() == "yes");
+        }
+    }
 }
 
-Console.ReadLine();
+
+
+
