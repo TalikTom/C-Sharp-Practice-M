@@ -18,7 +18,9 @@ namespace CRUFilesApp
     {
         static void Main(string[] args)
         {
-            /* ---------------------------------------------------- */
+            /* ------------------------------------------------------------------ */
+            /* Hardcoded create PDF */
+            /* ------------------------------------------------------------------ */
 
             //System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             //Console.WriteLine("Generating PDF...");
@@ -52,6 +54,11 @@ namespace CRUFilesApp
 
             // Read the text file
 
+
+            /* ------------------------------------------------------------------ */
+            /* TxtToPDFConverter */
+            /* ------------------------------------------------------------------ */
+
             string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
 
             string pdfOutput = $"C:\\Users\\student\\Documents\\Luka\\pdfOutput.pdf";
@@ -60,7 +67,12 @@ namespace CRUFilesApp
             converter.ConvertTextToPdf(fileName, pdfOutput);
 
 
-            /* --------------------------------------------------------------- */
+
+
+
+            /* ------------------------------------------------------------------ */
+            /* Create .txt file using FileStream and StreamWriter */
+            /* ------------------------------------------------------------------ */
 
             //// Create a string array with the lines of text
             //string[] lines = { "First line", "Second line", "Third line" };
@@ -100,7 +112,9 @@ namespace CRUFilesApp
             //}
 
 
-            // FileStream write text
+            /* ------------------------------------------------------------------ */
+            /* FileStream write text */
+            /* ------------------------------------------------------------------ */
 
             //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
 
@@ -112,7 +126,9 @@ namespace CRUFilesApp
             //fs.Write(bytes, 0, bytes.Length);
 
 
-            // FileStream write text with StreamWriter
+            /* ------------------------------------------------------------------ */
+            /* StreamWriter write text */
+            /* ------------------------------------------------------------------ */
 
             //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
 
@@ -124,7 +140,9 @@ namespace CRUFilesApp
             //Console.WriteLine("done");
 
 
-            //// FileStream read text
+            /* ------------------------------------------------------------------ */
+            /* Filestream read text */
+            /* ------------------------------------------------------------------ */
 
             //string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt";
 
@@ -140,7 +158,9 @@ namespace CRUFilesApp
             //}
 
 
-            //// FileStream read text with StreamReader
+            /* ------------------------------------------------------------------ */
+            /* StreamReader read text */
+            /* ------------------------------------------------------------------ */
 
             //string fileName2 = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
 
@@ -155,7 +175,9 @@ namespace CRUFilesApp
             //}
 
 
-            //// FileStream CopyTo
+            /* ------------------------------------------------------------------ */
+            /* Filestream copy from one file to another */
+            /* ------------------------------------------------------------------ */
 
             //string fileName1 = $"C:\\Users\\student\\Documents\\Luka\\test.txt"; ;
             //using var fs = new FileStream(fileName1, FileMode.Open);
