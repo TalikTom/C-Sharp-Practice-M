@@ -11,6 +11,7 @@ using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System.Diagnostics;
 using System.Text;
+using System.IO;
 
 namespace CRUFilesApp
 {
@@ -18,6 +19,28 @@ namespace CRUFilesApp
     {
         static void Main(string[] args)
         {
+            /* ------------------------------------------------------------------ */
+            /* StreamWriter/StreamReader */
+            /* ------------------------------------------------------------------ */
+            string data;
+            try
+            {
+                StreamReader reader = new StreamReader("");
+                data = reader.ReadLine();
+
+                while(data!=null)
+                {
+                    Console.WriteLine(data);
+                    data = reader.ReadLine();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            StreamReader reader = new StreamReader("");
+
             /* ------------------------------------------------------------------ */
             /* Hardcoded create PDF */
             /* ------------------------------------------------------------------ */
@@ -48,9 +71,9 @@ namespace CRUFilesApp
             //document.Save(fileName);
             //Console.WriteLine("PDF Generated!");
 
-            //// ...and start a viewer.
-            ////Process.Start(filename);
-            ///
+            // ...and start a viewer.
+            //Process.Start(filename);
+
 
             // Read the text file
 
@@ -59,12 +82,12 @@ namespace CRUFilesApp
             /* TxtToPDFConverter */
             /* ------------------------------------------------------------------ */
 
-            string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
+            //string fileName = $"C:\\Users\\student\\Documents\\Luka\\test2.txt";
 
-            string pdfOutput = $"C:\\Users\\student\\Documents\\Luka\\pdfOutput.pdf";
+            //string pdfOutput = $"C:\\Users\\student\\Documents\\Luka\\pdfOutput.pdf";
 
-            TextToPdfConverter converter = new TextToPdfConverter();
-            converter.ConvertTextToPdf(fileName, pdfOutput);
+            //TextToPdfConverter converter = new TextToPdfConverter();
+            //converter.ConvertTextToPdf(fileName, pdfOutput);
 
 
 
